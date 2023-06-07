@@ -14,6 +14,8 @@ enum Gender {
 }
 
 class InputPage extends StatefulWidget {
+  const InputPage({Key? key}) : super(key: key);
+
   @override
   _InputPageState createState() => _InputPageState();
 }
@@ -28,7 +30,7 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: const Text('BMI CALCULATOR'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -46,7 +48,7 @@ class _InputPageState extends State<InputPage> {
                     colour: selectedGender == Gender.male
                         ? kActiveCardColour
                         : kInactiveCardColour,
-                    cardChild: IconContent(
+                    cardChild: const IconContent(
                       icon: FontAwesomeIcons.mars,
                       label: 'MALE',
                     ),
@@ -62,7 +64,7 @@ class _InputPageState extends State<InputPage> {
                     colour: selectedGender == Gender.female
                         ? kActiveCardColour
                         : kInactiveCardColour,
-                    cardChild: IconContent(
+                    cardChild: const IconContent(
                       icon: FontAwesomeIcons.venus,
                       label: 'FEMALE',
                     ),
@@ -81,7 +83,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'Height',
                           style: kLabelTextStyle,
                         ),
@@ -91,20 +93,20 @@ class _InputPageState extends State<InputPage> {
                           textBaseline: TextBaseline.alphabetic,
                           children: [
                             Text(height.toString(), style: kNumberTextStyle),
-                            Text('cm', style: kLabelTextStyle),
+                            const Text('cm', style: kLabelTextStyle),
                           ],
                         ),
                         SliderTheme(
                           data: SliderTheme.of(context).copyWith(
                               activeTrackColor: Colors.white,
-                              inactiveTrackColor: Color(0xFF8D8E98),
-                              thumbColor: Color(0xFFEB1555),
-                              overlayColor: Color(0x29EB1555),
-                              thumbShape: RoundSliderThumbShape(
+                              inactiveTrackColor: const Color(0xFF8D8E98),
+                              thumbColor: const Color(0xFFEB1555),
+                              overlayColor: const Color(0x29EB1555),
+                              thumbShape: const RoundSliderThumbShape(
                                 enabledThumbRadius: 20.0,
                               ),
                               overlayShape:
-                                  RoundSliderOverlayShape(overlayRadius: 30.0)),
+                                  const RoundSliderOverlayShape(overlayRadius: 30.0)),
                           child: Slider(
                             value: height.toDouble(),
                             min: 120.0,
@@ -132,14 +134,14 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('WEIGHT', style: kLabelTextStyle),
+                        const Text('WEIGHT', style: kLabelTextStyle),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.baseline,
                           textBaseline: TextBaseline.alphabetic,
                           children: [
                             Text(weight.toString(), style: kNumberTextStyle),
-                            Text('kg', style: kLabelTextStyle),
+                            const Text('kg', style: kLabelTextStyle),
                           ],
                         ),
                         Row(
@@ -155,7 +157,7 @@ class _InputPageState extends State<InputPage> {
                                 });
                               },
                             ),
-                            SizedBox(width: 10.0),
+                            const SizedBox(width: 10.0),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
@@ -176,14 +178,14 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('AGE', style: kLabelTextStyle),
+                        const Text('AGE', style: kLabelTextStyle),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.baseline,
                           textBaseline: TextBaseline.alphabetic,
                           children: [
                             Text(age.toString(), style: kNumberTextStyle),
-                            Text('yrs', style: kLabelTextStyle),
+                            const Text('yrs', style: kLabelTextStyle),
                           ],
                         ),
                         Row(
@@ -199,7 +201,7 @@ class _InputPageState extends State<InputPage> {
                                 });
                               },
                             ),
-                            SizedBox(width: 10.0),
+                            const SizedBox(width: 10.0),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
